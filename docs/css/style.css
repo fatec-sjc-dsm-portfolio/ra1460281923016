@@ -3,3 +3,584 @@
     height: 200px;
     border-radius: 50%;
 }
+
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Fundo com imagem */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/background.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+}
+
+/* Overlay escuro para melhor legibilidade */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Seções */
+.fullscreen-section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.transparent-section {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gray-section {
+    background-color: rgba(240, 240, 240, 0.9);
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navegação */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#navbar li {
+    margin: 0 15px;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#navbar a:hover {
+    color: #4ecca3;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Seção Home */
+#home {
+    text-align: center;
+}
+
+.perfil {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.foto_portfolio {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #4ecca3;
+    margin-bottom: 20px;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #4ecca3;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.scroll-down {
+    color: #fff;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Seção Sobre Mim */
+#about h2, #projects h2, #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #4ecca3;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.skills {
+    margin-top: 30px;
+}
+
+.skills h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tags span {
+    background: #4ecca3;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Seção Projetos */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid #4ecca3;
+    color: #4ecca3;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #4ecca3;
+    color: #fff;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-info p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.project-link {
+    display: inline-block;
+    color: #4ecca3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: #3aa789;
+}
+
+/* Seção Contato */
+/* Estilos para a seção de contato atualizada */
+.social-links-large {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s;
+    width: 120px;
+}
+
+.social-icon i {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.social-icon span {
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #4ecca3;
+}
+
+.contact-minimal {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* Ajuste para o LinkedIn que estava com link incorreto */
+a[href*="linkedin"] {
+    color: #0a66c2; /* Azul do LinkedIn */
+}
+
+a[href*="github"] {
+    color: #f5f5f5; /* Branco do GitHub */
+}
+
+/* Efeito hover específico para cada rede */
+a[href*="linkedin"]:hover {
+    color: #0a66c2;
+}
+
+a[href*="github"]:hover {
+    color: #f5f5f5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-content, .contact-content {
+        flex-direction: column;
+    }
+    
+    .project-filters {
+        flex-wrap: wrap;
+    }
+    
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+    
+    #home h1 {
+        font-size: 2rem;
+    }
+    
+    #home p {
+        font-size: 1rem;
+    }
+}
+
+/* Projetos */
+/* Estilos específicos para a página do projeto */
+.project-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/spicebank-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+}
+
+/* Ajuste para o GIF em si */
+.project-gif {
+    min-width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto; /* Empurra o conteúdo para a esquerda */
+    transform: translateX(-20px); /* Ajuste fino de posicionamento */
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.header-gif {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: flex-start; /* Alterado de center para flex-start */
+    padding-left: 50px; /* Adiciona espaço à esquerda */
+    margin-left: -30px; /* Puxa o container um pouco para a esquerda */
+}
+
+.project-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.project-header .meta {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.project-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #333;
+    background-color: white;
+}
+
+.project-section {
+    margin-bottom: 40px;
+}
+
+.project-section h2 {
+    color: #4ecca3;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4ecca3;
+    padding-bottom: 10px;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.badge {
+    background-color: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.skills-table th, .skills-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.skills-table th {
+    background-color: #f5f5f5;
+}
+
+.rating {
+    color: #ffc107;
+    letter-spacing: 3px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #4ecca3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #3aa789;
+}
+
+.repo-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.repo-button:hover {
+    background-color: #555;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .header-gif {
+        padding-left: 20px;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .project-gif {
+        transform: none;
+        max-width: 90%;
+    }
+    
+    .project-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .project-header p {
+        margin: 0 auto;
+    }
+}
+
+/* Estilos do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-modal:hover {
+    color: #4ecca3;
+}
+
+/* Ajuste para o GIF no header (tamanho reduzido) */
+.project-gif {
+    width: auto;
+    height: 300px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-gif:hover {
+    transform: scale(1.05);
+}

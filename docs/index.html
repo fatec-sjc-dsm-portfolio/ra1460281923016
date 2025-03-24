@@ -3,11 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-    <title>Portfólio Igor</title>
+    <title>Igor Pereira - Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <img src="img/foto_portfolio.jpg" alt="Foto do Portfólio" class="foto_portfolio">
-    <h1>Portfólio de Igor Pereira</h1>
+    <!-- Menu de Navegação -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Minha Jornada</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção Home -->
+    <section id="home" class="fullscreen-section">
+        <div class="perfil">
+            <img src="img/foto_portfolio.jpg" alt="Foto do Portfólio" class="foto_portfolio">
+            <h1>Igor Pereira</h1>
+            <p>A máquina pode substituir 100 trabalhadores comuns, mas nenhuma máquina pode substituir um trabalhador criativo." - Elon Musk</p>
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Jornada -->
+    <section id="about" class="fullscreen-section transparent-section">
+        <div class="container">
+            <h2>Minha Jornada</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Atualmente, estou concluindo o sexto semestre do curso de Desenvolvimento de Software Multiplataforma na FATEC, com previsão de formatura em 2025. Minha trajetória na área de tecnologia, no entanto, começou antes dessa graduação.</p>
+
+                    <p>Em 2016, cursei Técnico em Automação Industrial na ETEC de São José dos Campos. Foi nesse período que, embora tenha me identificado com a área industrial, tive meu primeiro contato significativo com programação e descobri uma paixão que mudaria minha direção profissional.</p>
+                        
+                    <p>Em 2019, ingressei pela primeira vez na FATEC para cursar Banco de Dados, onde tive minha primeira experiência com desenvolvimento de APIs. Apesar de ter precisado interromper os estudos na época, em 2022 retomei minha formação, agora no curso de Desenvolvimento de Software Multiplataforma, onde venho consolidando meu conhecimento e habilidades na área que escolhi seguir.</p>
+                    <div class="skills">
+                        <h3>Linguagens que já trabalhei</h3>
+                        <div class="skill-tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Python</span>
+                            <span>Typescript</span>
+                            <span>Java</span>
+                            <span>React Native</span>
+                            <span>Flutter</span>
+                            <span>Entre outras</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projects" class="fullscreen-section gray-section">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="api">API</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Projeto 1 -->
+                <div class="project-card" data-category="api">
+                    <img src="img/project1.png" alt="Projeto 1">
+                    <div class="project-info">
+                        <h3>API 1 Semestre</h3>
+                        <p>Banco Digital</p>
+                        <a href="project/project1.html" class="project-link">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="project-card" data-category="api">
+                    <img src="img/loading.gif" alt="Projeto 2" class="loading">
+                    <div class="project-info">
+                        <h3>API 2 Semestre</h3>
+                        <p>...</p>
+                        <a href="#" class="project-link">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="project-card" data-category="api">
+                    <img src="img/loading.gif" alt="Projeto 3">
+                    <div class="project-info">
+                        <h3>API 3 Semestre</h3>
+                        <p>...</p>
+                        <a href="#" class="project-link">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Projeto 4 -->
+                <div class="project-card" data-category="api">
+                    <img src="img/loading.gif" alt="Projeto 4">
+                    <div class="project-info">
+                        <h3>API 4 Semestre</h3>
+                        <p>...</p>
+                        <a href="#" class="project-link">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Projeto 5 -->
+                <div class="project-card" data-category="api">
+                    <img src="img/loading.gif" alt="Projeto 5">
+                    <div class="project-info">
+                        <h3>API 5 Semestre</h3>
+                        <p>...</p>
+                        <a href="#" class="project-link">Ver detalhes</a>
+                    </div>
+                </div>
+                <!-- Projeto 6 -->
+                <div class="project-card" data-category="api">
+                    <img src="img/loading.gif" alt="Projeto 6">
+                    <div class="project-info">
+                        <h3>API 6 Semestre</h3>
+                        <p>...</p>
+                        <a href="#" class="project-link">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contact" class="fullscreen-section transparent-section">
+        <div class="container">
+            <h2>Me encontre nas redes...</h2>
+            <div class="contact-content">
+                <div class="social-links-large">
+                    <a href="https://github.com/igorpereira28" class="social-icon">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/igor-da-silva-pereira" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="contact-minimal">
+                    <p><i class="fas fa-envelope"></i> igorsilvape28@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (12) 99119-9762</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
