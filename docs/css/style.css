@@ -372,8 +372,18 @@ a[href*="github"]:hover {
     justify-content: center;
     text-align: center;
 }
+.project-image {
+    max-width: 50%;
+    display: block; /* Transforma a imagem em bloco para margin funcionar */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+}
 
-
+.project-image-4 {
+    margin-left: auto;
+    margin-right: auto;
+}
 .project-header .header-content {
     max-width: 1200px;
     margin-bottom: 30px;
