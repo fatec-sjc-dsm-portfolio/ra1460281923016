@@ -75,10 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
-
-// Modal para o GIF
-document.addEventListener('DOMContentLoaded', function() {
+    
+    // Modal para o GIF
     const modal = document.getElementById("gifModal");
     const modalImg = document.getElementById("fullSizeGif");
     const gifPreview = document.querySelector(".project-gif");
@@ -101,4 +99,33 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.display = "none";
         }
     }
+
+    // Carrossel - Navegação
+    let currentIndex = 0;
+    const gifs = document.querySelectorAll('.project-gif-container');
+    const totalGifs = gifs.length;
+    const carrossel = document.querySelector('.header-gif-carrossel');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+
+    // Função para atualizar a posição do carrossel
+    function updateCarrossel() {
+        const offset = -currentIndex * (gifs[0].offsetWidth + 20); // 20px é o espaçamento entre os GIFs
+        carrossel.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Evento de navegação para a direita
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalGifs; // Aumenta o índice e faz a rotação
+        updateCarrossel();
+    });
+
+    // Evento de navegação para a esquerda
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalGifs) % totalGifs; // Diminui o índice e faz a rotação
+        updateCarrossel();
+    });
+
+    // Inicializa o carrossel na posição inicial
+    updateCarrossel();
 });
